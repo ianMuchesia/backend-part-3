@@ -16,13 +16,22 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 router.get('/', (req,res)=>{
+    
     res.send("hello frm Dalle")
+
 });
 
 router.post('/',async(req, res)=>
+
 {
     try {
-        const {prompt } = req.body;
+        console.log(req.params)
+    } catch (error) {
+        console.log(error) 
+    }
+   
+   /*  try {
+        const { prompt } = req.body;
 
         const AIresponse = await openai.createImage({
             prompt,
@@ -36,7 +45,7 @@ router.post('/',async(req, res)=>
     } catch (error) {
         console.log(error)
         res.status(500).send(error?.response.data.error.message)
-    }
+    } */
 })
 
 
