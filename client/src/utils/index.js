@@ -1,4 +1,4 @@
-import { surpriseMe, surpriseMePrompts } from "../assets/surpriseMe/index"
+import {  surpriseMePrompts } from "../assets/surpriseMe/index"
 
 export const getRandomPrompt = (prompt) =>{
     const randomIndex = Math.floor(Math.random()*surpriseMePrompts.length);
