@@ -32,14 +32,14 @@ router.post('/',async(req, res)=>
          const response = await openai.createImage({
             prompt,
             n: 1,
-            size: '512x512',
-            
+            size: '256x256',
+            response_format:'url'
         })
-        console.log("yess_1.5")
+        
         const image = response.data.data[0].url; 
-        console.log("yess_2")
+        
        res.status(200).json({photo:image})
-       console.log("yess_3")
+       
     } catch (error) {
         console.log(error)
         res.status(500).send(error?.response.data.error.message)
